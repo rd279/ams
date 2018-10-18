@@ -27,6 +27,10 @@
     <link href="<?php echo base_url('assets/template/vendor/select2/select2.min.css') ?>" rel="stylesheet" media="all" />
     <link href="<?php echo base_url('assets/template/vendor/perfect-scrollbar/perfect-scrollbar.css') ?>" rel="stylesheet" media="all" />
 
+    <!-- DataTables -->
+    <link href="<?php echo base_url('assets/template/vendor/DataTables/datatables.min.css') ?>" rel="stylesheet" media="all" />
+
+
     <!-- Main CSS-->
     <link href="<?php echo base_url('assets/template/css/theme.css') ?>" rel="stylesheet" type="text/css" />
     <script src="<?php echo base_url('assets/template/vendor/jquery-3.2.1.min.js') ?>" type="text/javascript"></script>

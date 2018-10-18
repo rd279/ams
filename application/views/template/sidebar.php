@@ -73,9 +73,9 @@
                             <a href="dashboard">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
-                        <?php if ($_SESSION['admin'] == 1){ ?>
+                        <?php if ($_SESSION['activestat'] == 'admin'){ ?>
                         <li>
-                            <a href="#">
+                            <a href="SOTK">
                                 <i class="fas fa-sitemap"></i>SOTK</a>
                         </li>
                         <?php } ?>

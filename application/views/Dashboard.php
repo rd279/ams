@@ -24,8 +24,7 @@ $this->load->view('template/head');
                             <div class="col-md-12">
                             </div>
                         </div>
-                    <?php print_r($_SESSION); ?>
-
+                    <!-- <?php print_r($_SESSION); ?> -->
                     </div>
                 </div>
                         <div class="row">
