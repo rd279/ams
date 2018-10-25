@@ -36,7 +36,7 @@ class SOTK extends CI_Controller {
 
 	function simpan(){
 		$this->db->select("MAX(id) AS id");
-		$this->db->from("sotk_lvl1");
+		$this->db->from("kantor");
 		$query = $this->db->get();
 	    $this->db->limit(1);
 	    $rows = $query->row()->id;

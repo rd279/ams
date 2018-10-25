@@ -5,6 +5,7 @@
     <script src="<?php echo base_url('assets/template/vendor/bootstrap-4.1/bootstrap.min.js') ?>" type="text/javascript"></script>
     <!-- DataTables -->
     <script src="<?php echo base_url('assets/template/vendor/DataTables/datatables.min.js') ?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('assets/template/vendor/DataTables/Buttons-1.5.4/js/datatables.min.js') ?>" type="text/javascript"></script>
     <!-- Vendor JS       -->
     <script src="<?php echo base_url('assets/template/vendor/slick/slick.min.js') ?>" type="text/javascript"></script>
     <script src="<?php echo base_url('assets/template/vendor/wow/wow.min.js') ?>" type="text/javascript"></script>

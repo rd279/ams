@@ -24,42 +24,29 @@ $this->load->view('template/head');
                             <div class="col-md-12">
                             </div>
                         </div>
-                    <div class="row">
-                            <div class="col-md-12">
-                                <!-- DATA TABLE -->
-                                <h3 class="title-5 m-b-35">SOTK</h3>
-                                <div class="table-data__tool">
-                                    <div class="table-data__tool-left">
-                                        <!-- <div class="rs-select2--light rs-select2--md">
-                                            <select class="js-select2" name="property">
-                                                <option selected="selected">All Properties</option>
-                                                <option value="">Option 1</option>
-                                                <option value="">Option 2</option>
-                                            </select>
-                                            <div class="dropDownSelect2"></div>
-                                        </div>
-                                        <div class="rs-select2--light rs-select2--sm">
-                                            <select class="js-select2" name="time">
-                                                <option selected="selected">Today</option>
-                                                <option value="">3 Days</option>
-                                                <option value="">1 Week</option>
-                                            </select>
-                                            <div class="dropDownSelect2"></div>
-                                        </div> -->
+                    <div class="row card">
+                        <div class="card-header">
+                            <h4>SOTK</h4>
+                        </div>
+                        <div class="card-body">
+                            <!-- TABs -->
+                            <div class="custom-tab">
+                            <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="lvl1-tab" data-toggle="tab" href="#lvl1" role="tab" aria-controls="lvl1" aria-selected="true">Level 1</a>
+                                <a class="nav-item nav-link" id="lvl2-tab" data-toggle="tab" href="#lvl2" role="tab" aria-controls="lvl2" aria-selected="false">Level 2</a>
+                                <a class="nav-item nav-link" id="lvl3-tab" data-toggle="tab" href="#lvl3" role="tab" aria-controls="lvl3" aria-selected="false">Level 3</a>
+                            </div>
+                            </nav>
+                            <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+                                <!-- LEVEL 1 -->
+                                <div class="tab-pane fade show active" id="lvl1" role="tabpanel" aria-labelledby="lvl1-tab">
+                                    <div class="row pull-right">
+                                    <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#addModal">
+                                    <i class="zmdi zmdi-plus"></i>add item</button>
                                     </div>
-                                    <div class="table-data__tool-right">
-                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#addModal">
-                                            <i class="zmdi zmdi-plus"></i>add item</button>
-                                        <!-- <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
-                                            <select class="js-select2" name="type">
-                                                <option selected="selected">Export</option>
-                                                <option value="">Option 1</option>
-                                                <option value="">Option 2</option>
-                                            </select>
-                                            <div class="dropDownSelect2"></div>
-                                        </div> -->
-                                    </div>
-                                </div>
+                                    <br><br>
+                                <div class="row">
                                 <div class="table-responsive table-responsive-data2">
                                     <table class="table table-borderless table-data3" id="tsotk">
                                          <thead>
@@ -74,8 +61,28 @@ $this->load->view('template/head');
                                         </tbody>
                                     </table>
                                 </div>
-                                <!-- END DATA TABLE -->
+                                    </div>
+
+
+
+                                </div>
+                                <!-- END Level 1 -->
+                                <!-- LEVEL 2 -->
+                                <div class="tab-pane fade" id="lvl2" role="tabpanel" aria-labelledby="lvl2-tab">
+                                <p>Level 2</p>
+                                </div>
+                                <!-- END Level 2 -->
+                                <!-- LEVEL 3 -->
+                                <div class="tab-pane fade" id="lvl3" role="tabpanel" aria-labelledby="lvl3-tab">
+                                <p>Level 3</p>
+                                </div>
+                                <!-- END Level 3 -->
                             </div>
+
+                            </div>
+                            <!-- END TABs -->
+                        </div>
+                            
 
                         </div>
 
@@ -117,7 +124,7 @@ $this->load->view('template/head');
                 <form>
                 <div class="modal-body">
                     <small class="form-text text-muted">Level 1</small>
-                    <input type="text" id="lvl1" name="lvl1" placeholder="Jabatan / Posisi" class="form-control" required="">
+                    <input type="text" id="lvl1-add" name="lvl1-add" placeholder="Jabatan / Posisi" class="form-control" required="">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -184,7 +191,7 @@ $this->load->view('template/head');
     $(document).ready(function(){
         view_tabel_sotk();
          
-    $('#tsotk').dataTable();
+    $('#tsotk').dataTable({});
     
     function view_tabel_sotk(){
         $.ajax({
@@ -216,14 +223,14 @@ $this->load->view('template/head');
 
     //Simpan
     $('#simpan').on('click',function(){
-        var name = $('#lvl1').val();
+        var name = $('#lvl1-add').val();
         $.ajax({
             type : "POST",
             url  : "<?php echo base_url('SOTK/simpan')?>",
             dataType : "JSON",
             data : {name:name},
             success: function(data){
-                $('[name="lvl1"]').val("");
+                $('[name="lvl1-add"]').val("");
                 $('#addModal').modal('hide');
                 view_tabel_sotk();
             }

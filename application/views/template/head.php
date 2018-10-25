@@ -29,6 +29,7 @@
 
     <!-- DataTables -->
     <link href="<?php echo base_url('assets/template/vendor/DataTables/datatables.min.css') ?>" rel="stylesheet" media="all" />
+    <link href="<?php echo base_url('assets/template/vendor/DataTables/Buttons-1.5.4/css/buttons.bootstrap.min.css') ?>" rel="stylesheet" media="all" />
 
 
     <!-- Main CSS-->
